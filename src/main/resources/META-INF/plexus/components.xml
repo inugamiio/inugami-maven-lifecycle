@@ -1,0 +1,73 @@
+<component-set>
+    <components>
+        <component>
+            <role-hint>inugami-maven-lifecycle</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
+                <id>inugami-maven-lifecycle</id>
+                <phases>
+                    <phase>clean-server</phase>
+                    <phase>build-server</phase>
+                </phases>
+
+                <default-phases>
+                    <clean-server>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerCleanServer
+                    </clean-server>
+                    <build-server>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerBuildServer
+                    </build-server>
+
+                </default-phases>
+
+            </configuration>
+        </component>
+
+
+
+        <component>
+            <role-hint>inugami-maven-lifecycle_deploy_plugin</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
+                <id>inugami-maven-lifecycle_deploy_plugin</id>
+                <phases>
+                    <phase>validate</phase>
+                    <phase>initialize</phase>
+                    <phase>process-resources</phase>
+                    <phase>compile</phase>
+                    <phase>process-test-resources</phase>
+                    <phase>test-compile</phase>
+                    <phase>test</phase>
+                    <phase>prepare-package</phase>
+                    <phase>package</phase>
+                    <phase>deploy-plugin</phase>
+                </phases>
+
+                <default-phases>
+                    <deploy-plugin>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployPlugin</deploy-plugin>
+                </default-phases>
+            </configuration>
+        </component>
+
+
+        <component>
+            <role-hint>inugami-maven-lifecycle_deploy_resources</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
+                <id>inugami-maven-lifecycle_deploy_resources</id>
+                <phases>
+                    <phase>validate</phase>
+                    <phase>initialize</phase>
+                    <phase>process-resources</phase>
+                    <phase>deploy-resources</phase>
+                </phases>
+
+                <default-phases>
+                    <deploy-resources>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployResources
+                    </deploy-resources>
+                </default-phases>
+            </configuration>
+        </component>
+    </components>
+</component-set>

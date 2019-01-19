@@ -1,0 +1,32 @@
+= Inugami plugin lifecycle
+:encoding: UTF-8
+:toc: macro
+:toclevels: 4
+
+toc::[4]
+
+
+
+= Lifecycle for build or clean Inugami server :
+
+* clean-server
+* build-server
+
+
+= Plugin  Lifecycle for deploy current artifact into Inugami server :
+
+* initialize
+* process-resources
+* compile
+* process-test-resources
+* test-compile
+* test
+* prepare-package
+* package
+* deploy-plugin
+
+= Plugin Lifecycle for deploy resources :
+
+* initialize
+* process-resources
+* deploy-resources

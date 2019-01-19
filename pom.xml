@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<!-- ============================================================================ 
+    = PROJECT INFORMATIONS
+    ============================================================================ -->
+    <groupId>org.inugami.maven.plugin.lifecycle</groupId>
+    <artifactId>inugami-maven-lifecycle</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>maven-plugin</packaging>
+    
+	<!-- ======================================================================= 
+	= PROPERTIES 
+    ======================================================================== -->
+    <properties>
+        <super.jdk>1.8</super.jdk>
+
+        <org.slf4j-api.version>1.7.25</org.slf4j-api.version>
+        <org.apache.maven.version>3.5.0</org.apache.maven.version>
+        <org.apache.maven.maven-plugin-annotations.version>3.5</org.apache.maven.maven-plugin-annotations.version>
+        <org.plexus-component-metadata.version>1.5.5</org.plexus-component-metadata.version>
+        <org.maven-plugin-plugin.version>3.4</org.maven-plugin-plugin.version>
+        <org.maven-compiler-plugin.version>3.8.0</org.maven-compiler-plugin.version>
+        <org.eclipse.ifecycle-mapping.version>1.0.0</org.eclipse.ifecycle-mapping.version>
+    </properties>
+
+    <!-- ======================================================================= 
+    = LICENSE
+    ======================================================================== -->
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl.txt</url>
+        </license>
+    </licenses>
+    
+    <!-- ======================================================================= 
+    = SCM
+    ======================================================================== -->
+    <scm>
+        <url>https://github.com/inugamiio/inugami-maven-lifecycle</url>
+        <connection>git@github.com:inugamiio/inugami-maven-lifecycle.git</connection>
+        <developerConnection>git@github.com:inugamiio/inugami-maven-lifecycle.git</developerConnection>
+        <tag>v0.0.0</tag>
+    </scm>
+    
+    
+	<!-- ============================================================================ 
+	= DEPENDENCIES
+    ============================================================================ -->
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j-api.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>${org.apache.maven.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-component-annotations</artifactId>
+            <version>${org.plexus-component-metadata.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>${org.apache.maven.maven-plugin-annotations.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- ============================================================================ 
+    = BUILD
+    ============================================================================ -->
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${org.maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${super.jdk}</source>
+                        <target>${super.jdk}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <optimize>true</optimize>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+
+                        <compilerArgs>
+                            <arg>-verbose</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>${org.eclipse.ifecycle-mapping.version}</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.plexus</groupId>
+                                        <artifactId>plexus-component-metadata</artifactId>
+                                        <versionRange>[1.5.5,)</versionRange>
+                                        <goals>
+                                            <goal>generate-metadata</goal>
+                                            <goal>descriptor</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute />
+                                    </action>
+                                </pluginExecution>
+
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-plugin-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>helpmojo</goal>
+                                            <goal>descriptor</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute />
+                                    </action>
+                                </pluginExecution>
+
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.plexus</groupId>
+                    <artifactId>plexus-component-metadata</artifactId>
+                    <version>${org.plexus-component-metadata.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-component-metadata</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>${org.maven-plugin-plugin.version}</version>
+                <executions>
+
+                    <execution>
+                        <id>help-goal</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>helpmojo</goal>
+                            <goal>descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
