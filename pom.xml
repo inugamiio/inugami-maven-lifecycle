@@ -48,7 +48,7 @@
     <distributionManagement>
         <repository>
             <id>inugami-release</id>
-            <name>inugami-releases</name>
+            <name>inugami-release</name>
             <url>http://inugami.io/artifactory/inugami-release</url>
         </repository>
         <snapshotRepository>
