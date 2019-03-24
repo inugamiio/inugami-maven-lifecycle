@@ -44,7 +44,19 @@
         <developerConnection>scm:git:git@github.com:inugamiio/inugami-maven-lifecycle.git</developerConnection>
         <tag>v0.0.0</tag>
     </scm>
-    
+
+    <distributionManagement>
+        <repository>
+            <id>inugami-releases</id>
+            <name>inugami-releases</name>
+            <url>http://inugami.io/artifactory/inugami-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>inugami-snapshot</id>
+            <name>inugami-snapshot</name>
+            <url>http://inugami.io/artifactory/inugami-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
     
 	<!-- ============================================================================ 
 	= DEPENDENCIES
