@@ -49,7 +49,7 @@
         <repository>
             <id>inugami-releases</id>
             <name>inugami-releases</name>
-            <url>http://inugami.io/artifactory/inugami-releases</url>
+            <url>http://inugami.io/artifactory/inugami-release</url>
         </repository>
         <snapshotRepository>
             <id>inugami-snapshot</id>
