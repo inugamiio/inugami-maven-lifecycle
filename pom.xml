@@ -7,7 +7,7 @@
     ============================================================================ -->
     <groupId>org.inugami.maven.plugin.lifecycle</groupId>
     <artifactId>inugami-maven-lifecycle</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.5</version>
     <packaging>maven-plugin</packaging>
     
 	<!-- ======================================================================= 
@@ -42,7 +42,7 @@
         <url>https://github.com/inugamiio/inugami-maven-lifecycle</url>
         <connection>scm:git:git@github.com:inugamiio/inugami-maven-lifecycle.git</connection>
         <developerConnection>scm:git:git@github.com:inugamiio/inugami-maven-lifecycle.git</developerConnection>
-        <tag>inugami-maven-lifecycle-0.0.1</tag>
+        <tag>inugami-maven-lifecycle-0.0.5</tag>
     </scm>
 
     <distributionManagement>
