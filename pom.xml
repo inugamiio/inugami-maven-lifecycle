@@ -41,8 +41,8 @@
     ======================================================================== -->
     <scm>
         <url>https://github.com/inugamiio/inugami-maven-lifecycle</url>
-        <connection>git@github.com:inugamiio/inugami-maven-lifecycle.git</connection>
-        <developerConnection>git@github.com:inugamiio/inugami-maven-lifecycle.git</developerConnection>
+        <connection>scm:git:git@github.com:inugamiio/inugami-maven-lifecycle.git</connection>
+        <developerConnection>scm:git:git@github.com:inugamiio/inugami-maven-lifecycle.git</developerConnection>
         <tag>v0.0.0</tag>
     </scm>
     
