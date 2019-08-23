@@ -22,7 +22,24 @@
             </configuration>
         </component>
 
+        <component>
+            <role-hint>inugami-maven-lifecycle</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
+                <id>inugami-initialize-project</id>
+                <phases>
+                    <phase>initialize-project</phase>
+                </phases>
 
+                <default-phases>
+                    <clean-server>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerInitialize
+                    </clean-server>
+
+                </default-phases>
+
+            </configuration>
+        </component>
 
         <component>
             <role-hint>inugami-maven-lifecycle_deploy_plugin</role-hint>
