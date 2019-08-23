@@ -5,6 +5,25 @@
             <role>org.apache.maven.lifecycle.Lifecycle</role>
             <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
             <configuration>
+                <id>inugami-initialize-project</id>
+                <phases>
+                    <phase>initialize-project</phase>
+                </phases>
+
+                <default-phases>
+                    <initialize-project>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerInitialize
+                    </initialize-project>
+
+                </default-phases>
+
+            </configuration>
+        </component>
+
+        <component>
+            <role-hint>inugami-maven-lifecycle</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
                 <id>inugami-maven-lifecycle</id>
                 <phases>
                     <phase>clean-server</phase>
@@ -22,24 +41,7 @@
             </configuration>
         </component>
 
-        <component>
-            <role-hint>inugami-maven-lifecycle</role-hint>
-            <role>org.apache.maven.lifecycle.Lifecycle</role>
-            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
-            <configuration>
-                <id>inugami-initialize-project</id>
-                <phases>
-                    <phase>initialize-project</phase>
-                </phases>
 
-                <default-phases>
-                    <clean-server>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerInitialize
-                    </clean-server>
-
-                </default-phases>
-
-            </configuration>
-        </component>
 
         <component>
             <role-hint>inugami-maven-lifecycle_deploy_plugin</role-hint>
@@ -61,7 +63,8 @@
                 </phases>
 
                 <default-phases>
-                    <deploy-plugin>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployPlugin</deploy-plugin>
+                    <deploy-plugin>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployPlugin
+                    </deploy-plugin>
                 </default-phases>
             </configuration>
         </component>
