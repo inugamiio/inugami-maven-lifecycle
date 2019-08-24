@@ -7,7 +7,7 @@
     ============================================================================ -->
     <groupId>org.inugami.maven.plugin.lifecycle</groupId>
     <artifactId>inugami-maven-lifecycle</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     
 	<!-- ======================================================================= 
