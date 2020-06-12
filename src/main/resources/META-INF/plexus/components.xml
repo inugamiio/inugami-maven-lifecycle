@@ -89,5 +89,31 @@
                 </default-phases>
             </configuration>
         </component>
+        
+        
+        <component>
+            <role-hint>inugami-maven-lifecycle_deploy_plugin</role-hint>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <configuration>
+                <id>inugami-maven-lifecycle_deep_test</id>
+                <phases>
+                    <phase>validate</phase>
+                    <phase>initialize</phase>
+                    <phase>process-resources</phase>
+                    <phase>compile</phase>
+                    <phase>process-test-resources</phase>
+                    <phase>test-compile</phase>
+                    <phase>test</phase>
+                    <phase>deep-test</phase>
+                </phases>
+
+                <default-phases>
+                    <deploy-plugin>org.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:deepTestPlugin
+                    </deploy-plugin>
+                </default-phases>
+            </configuration>
+        </component>
+        
     </components>
 </component-set>
