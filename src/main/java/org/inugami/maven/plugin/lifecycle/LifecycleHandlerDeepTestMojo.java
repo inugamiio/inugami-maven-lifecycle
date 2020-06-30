@@ -21,7 +21,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 
 
-@Mojo(name = "deepTestPlugin")
+@Mojo(name = "handlerDeepTest")
 public class LifecycleHandlerDeepTestMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         new MojoHelper().drawDeco("DEEP TEST", ">");
