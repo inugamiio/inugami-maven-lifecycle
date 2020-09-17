@@ -14,15 +14,13 @@
  * You should have received a copy of the GNU General Public License 
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.inugami.maven.plugin.lifecycle;
+package io.inugami.maven.plugin.lifecycle;
+import org.apache.maven.lifecycle.Lifecycle;
 
-import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.Mojo;
-
-@Mojo(name = "handlerBuildServer")
-public class LifecycleHandlerBuildServerMojo extends AbstractMojo {
-    public void execute() throws MojoExecutionException {
-        new MojoHelper().drawDeco("BUILD SERVER", ">");
-    }
+/**
+ * PluginLifecycle
+ * @author patrick_guillerm
+ * @since 22 juin 2017
+ */
+public class PluginLifecycle extends Lifecycle{
 }
