@@ -14,7 +14,7 @@
 	= PROPERTIES 
     ======================================================================== -->
     <properties>
-        <super.jdk>1.8</super.jdk>
+        <super.jdk>11</super.jdk>
 
         <org.slf4j-api.version>1.7.25</org.slf4j-api.version>
         <org.apache.maven.version>3.5.0</org.apache.maven.version>
@@ -105,6 +105,7 @@
 
                         <compilerArgs>
                             <arg>-verbose</arg>
+                            <arg>-parameters</arg>
                         </compilerArgs>
                     </configuration>
                 </plugin>
