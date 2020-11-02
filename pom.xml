@@ -7,7 +7,7 @@
     ============================================================================ -->
     <groupId>io.inugami.maven.plugin.lifecycle</groupId>
     <artifactId>inugami-maven-lifecycle</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.0.0</version>
     <packaging>maven-plugin</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Specifics maven lifecycle to package and run inugami project</description>
