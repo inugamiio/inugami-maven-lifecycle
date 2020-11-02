@@ -265,11 +265,6 @@
                 <configuration>
                     <useAgent>true</useAgent>
                     <passphrase>${gpg.passphrase}</passphrase>
-                    <gpgArguments>
-                        <arg>--batch</arg>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
                 </configuration>
             </plugin>
         </plugins>
