@@ -2,16 +2,16 @@
 :encoding: UTF-8
 :toc: macro
 :toclevels: 4
-
 toc::[4]
-
-
 
 = Lifecycle for build or clean Inugami server :
 
+* pre-clean-server
 * clean-server
+* post-clean-server
+* pre-build-server
 * build-server
-
+* post-build-server
 
 = Plugin  Lifecycle for deploy current artifact into Inugami server :
 
@@ -23,10 +23,14 @@ toc::[4]
 * test
 * prepare-package
 * package
+* pre-deploy-plugin
 * deploy-plugin
+* post-deploy-plugin
 
 = Plugin Lifecycle for deploy resources :
 
 * initialize
 * process-resources
+* pre-deploy-resources
 * deploy-resources
+* post-deploy-resources

@@ -7,13 +7,30 @@
             <configuration>
                 <id>inugami-initialize-server</id>
                 <phases>
+                    <phase>pre-clean-server</phase>
                     <phase>clean-server</phase>
+                    <phase>post-clean-server</phase>
+
+                    <phase>pre-build-server</phase>
                     <phase>build-server</phase>
+                    <phase>post-build-server</phase>
                 </phases>
 
                 <default-phases>
-                    <clean-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerCleanServer</clean-server>
-                    <build-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerBuildServer</build-server>
+                    <pre-clean-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPreCleanServer
+                    </pre-clean-server>
+                    <clean-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerCleanServer
+                    </clean-server>
+                    <post-clean-server>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPostCleanServer
+                    </post-clean-server>
+                    <pre-build-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPreBuildServer
+                    </pre-build-server>
+                    <build-server>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerBuildServer
+                    </build-server>
+                    <post-build-server>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPostBuildServer
+                    </post-build-server>
                 </default-phases>
             </configuration>
         </component>
@@ -51,15 +68,24 @@
             <configuration>
                 <id>inugami-initialize-project</id>
                 <phases>
+                    <phase>pre-initialize-project</phase>
                     <phase>initialize-project</phase>
+                    <phase>post-initialize-project</phase>
                 </phases>
 
                 <default-phases>
-                    <initialize-project>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerInitialize</initialize-project>
+                    <pre-initialize-project>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPreInitialize
+                    </pre-initialize-project>
+                    <initialize-project>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerInitialize
+                    </initialize-project>
+                    <post-initialize-project>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPostInitialize
+                    </post-initialize-project>
                 </default-phases>
             </configuration>
         </component>
-
+        
         <component>
             <role-hint>inugami-maven-lifecycle_deploy_plugin</role-hint>
             <role>org.apache.maven.lifecycle.Lifecycle</role>
@@ -76,11 +102,20 @@
                     <phase>test</phase>
                     <phase>prepare-package</phase>
                     <phase>package</phase>
+                    <phase>pre-deploy-plugin</phase>
                     <phase>deploy-plugin</phase>
+                    <phase>post-deploy-plugin</phase>
                 </phases>
 
                 <default-phases>
-                    <deploy-plugin>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployPlugin</deploy-plugin>
+                    <pre-deploy-plugin>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPreDeployPlugin
+                    </pre-deploy-plugin>
+                    <deploy-plugin>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployPlugin
+                    </deploy-plugin>
+                    <post-deploy-plugin>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPostDeployPlugin
+                    </post-deploy-plugin>
                 </default-phases>
             </configuration>
         </component>
@@ -96,11 +131,20 @@
                     <phase>validate</phase>
                     <phase>initialize</phase>
                     <phase>process-resources</phase>
+                    <phase>pre-deploy-resources</phase>
                     <phase>deploy-resources</phase>
+                    <phase>post-deploy-resources</phase>
                 </phases>
 
                 <default-phases>
-                    <deploy-resources>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployResources</deploy-resources>
+                    <pre-deploy-resources>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPreDeployResources
+                    </pre-deploy-resources>
+                    <deploy-resources>io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerDeployResources
+                    </deploy-resources>
+                    <post-deploy-resources>
+                        io.inugami.maven.plugin.lifecycle:inugami-maven-lifecycle:handlerPostDeployResources
+                    </post-deploy-resources>
                 </default-phases>
             </configuration>
         </component>
