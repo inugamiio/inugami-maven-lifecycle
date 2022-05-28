@@ -21,7 +21,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 
 
-@Mojo(name = "handlerPreCleanServer")
+@Mojo(name = "handlerPostCleanServer")
 public class LifecycleHandlerPostCleanServerMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         new MojoHelper().drawDeco("POST CLEAN SERVER", ">");
