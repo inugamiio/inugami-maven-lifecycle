@@ -4,6 +4,22 @@
 :toclevels: 4
 toc::[4]
 
+= Project initializing phases:
+* pre-initialize-project
+* initialize-project
+* post-initialize-project
+
+
+= Project deep testing phases:
+* validate
+* initialize
+* process-resources
+* compile
+* process-test-resources
+* test-compile
+* test
+* deep-test
+
 = Lifecycle for build or clean Inugami server :
 
 * pre-clean-server
