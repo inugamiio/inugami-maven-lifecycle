@@ -20,7 +20,7 @@
         <super.jdk>11</super.jdk>
 
         <org.slf4j-api.version>1.7.25</org.slf4j-api.version>
-        <org.apache.maven.version>3.5.0</org.apache.maven.version>
+        <org.apache.maven.version>3.8.1</org.apache.maven.version>
         <org.apache.maven.maven-plugin-annotations.version>3.5</org.apache.maven.maven-plugin-annotations.version>
         <org.plexus-component-metadata.version>2.1.0</org.plexus-component-metadata.version>
         <org.maven-plugin-plugin.version>3.6.0</org.maven-plugin-plugin.version>
